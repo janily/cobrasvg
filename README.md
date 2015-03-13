@@ -1,3 +1,1 @@
-## Project : code
-## Author : test
-## Version : 0.0.1
+###The JavaScript SVG path animation library for the modern web. 
