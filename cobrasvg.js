@@ -15,6 +15,17 @@
 
 	'use strict';
 
+	/**
+	 *
+	 * 针对不支持SVG的浏览器的检测，如果不支持svg的话，会在html元素上添加一个noSvg的class，反之则添加一个svg的class
+	 * 可以使用这个class来做一些降级处理，如不支持svg的浏览器，则直接显示一张png或者是jpg图片
+	 * 参考：http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser
+	 */
+
+	cobrasvg.prototype._supportSvg = function() {
+		return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
+	}
+
 	/* 探测浏览器种类 
 	 * 使用JavaScript来检测浏览器动画事件是否完成
 	 * 参考http://davidwalsh.name/css-animation-callback
@@ -157,16 +168,6 @@
 
 	cobrasvg.prototype.replay = function() {
 		this._initAnimation();
-	}
-	/**
-	 *
-	 * 针对不支持SVG的浏览器的检测，如果不支持svg的话，会在html元素上添加一个noSvg的唱class，反之则添加一个svg的class
-	 * 可以使用这个个class来做一些降级处理，如不支持svg的浏览器，则直接显示一张png或者是jpg图片
-	 * 参考：http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser
-	 */
-
-	cobrasvg.prototype._supportSvg = function() {
-		return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
 	}
 
 	/**
