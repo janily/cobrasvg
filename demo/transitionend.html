@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>transitionend js</title>
+  <style type="text/css">
+
+	.sample {
+	    width: 200px;
+	  height: 200px;
+	  border: 1px solid green;
+	  background: #ff0000;
+	  opacity: 1;
+	  margin-bottom: 20px;
+	  transition-property: opacity;
+	  transition-duration: .5s;
+	}
+
+	.hide {
+		opacity: 0;
+	}
+  </style>
+</head>
+<body>
+  <div class="sample"></div>
+  <button onclick="this.style.display='none';startFade();">Begin Fadeout, Detect Completion</button>
+  <script type="text/javascript">
+
+		(function() {
+			var e = document.getElementsByClassName('sample')[0];
+			
+			function whichTransitionEvent(){
+			    var t;
+			    var el = document.createElement('fakeelement');
+			    var transitions = {
+			      'transition':'transitionend',
+			      'OTransition':'oTransitionEnd',
+			      'MozTransition':'transitionend',
+			      'WebkitTransition':'webkitTransitionEnd'
+			    }
+
+			    for(t in transitions){
+			        if( el.style[t] !== undefined ){
+			            return transitions[t];
+			        }
+			    }
+			}
+
+			var transitionEvent = whichTransitionEvent();
+			e.addEventListener(transitionEvent, function() {
+				console.log('Transition complete!  This is the callback, no library needed!');
+			});
+
+			startFade = function() {
+				e.className+= ' hide';
+			}
+		})();
+	
+  </script>
+</body>
+</html>

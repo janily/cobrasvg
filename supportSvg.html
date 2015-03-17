@@ -10,9 +10,9 @@
   	}
 
   	if (!supportsSVG()) {
-  		alert("false")
+  		document.documentElement.className = "noSvg";
   	} else {
-  		alert("true")
+  		document.documentElement.className = "svg";
   	}
 
     // if (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1")) {
