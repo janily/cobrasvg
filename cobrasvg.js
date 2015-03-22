@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  *
- * Copyright 2015, Call Me janily
+ * Copyright 2015,janily
  *
  */
 
@@ -16,7 +16,6 @@
 	'use strict';
 
 	/**
-	 *
 	 * 针对不支持SVG的浏览器的检测，如果不支持svg的话，会在html元素上添加一个noSvg的class，反之则添加一个svg的class
 	 * 可以使用这个class来做一些降级处理，如不支持svg的浏览器，则直接显示一张png或者是jpg图片
 	 * 参考：http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser
@@ -50,7 +49,6 @@
 
 	var transitionEvent = whichTransitionEvent();
 	/**
-	 *
 	 * 扩展
 	 */
 
@@ -64,7 +62,6 @@
 	}
 
 	/**
-	 *
 	 * 构造函数
 	 */
 
@@ -76,19 +73,17 @@
 
 	/**
 	 *
-	 *
 	 * 指定要产生动画效果SVG元素的ID，默认为svg
 	 *
 	 */
 
 	cobrasvg.prototype.options = {
-		elementId: "svg"
+		elementId: "svg",    //指定要产生path动画效果的SVG元素的ID
+		fillPath: true       //是否开启填充的动画效果
 	}
 
 	/**
 	 * cobrasvg _init
-	 *
-	 *
 	 * 初始化方法
 	 */
 
@@ -99,6 +94,7 @@
 			document.documentElement.className = "svg";
 		}
 		this.svg = document.getElementById(this.options.elementId);
+		this.fillDraw = this.options.fillPath;
 		this.paths = this.svg.querySelectorAll("path");
 		this._initAnimation();
 	}
@@ -107,10 +103,6 @@
 	 * cobrasvg _initAnimation()
 	 * 动画方法，主要是初始化一些属性的值，首先是获取path元素的长度；
 	 * 然后设置path的透明度。
-	 *
-	 *
-	 *
-	 *
 	 */
 	cobrasvg.prototype._initAnimation = function() {
 		for (var i = 0; i < this.paths.length; i++) {
@@ -135,8 +127,10 @@
 			// 设置strokeDashoffset的值为0
 			path.style.strokeDashoffset = 0;
 
-			// 填充路径
-			this._fillPath(path);
+			// 是否填充路径
+			if(this.fillDraw == true) {
+				this._fillPath(path);
+			}
 		}
 	}
 
