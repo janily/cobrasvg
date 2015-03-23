@@ -11,7 +11,7 @@ cobrasvg主要是用来制作SVG路径动画的即path animation。路径动画�
 
 可以先来看看下面几个演示效果
 
-[demo1](http://jsbin.com/lafaqi/1/){:target="_blank"},[demo2](http://jsbin.com/yisebo/1/){:target="_blank"},[demo3](http://jsbin.com/gixike/1/){:target="_blank"}
+<a href="http://jsbin.com/lafaqi/1/" target="_blank">demo1</a>,<a href="http://jsbin.com/yisebo/1/" target="_blank">demo2</a>,<a href="http://jsbin.com/gixike/1/" target="_blank">demo3</a>
 
 ### Version
 
