@@ -96,8 +96,11 @@ cobrasvg主要是用来制作SVG路径动画的即path animation。路径动画�
     
 就是这么简单，然后刷新页面，一个优雅的svg动画效果就自动制作完成了。
 
+这里要感谢下互联网提供了很多的资料，给我提供了很多的帮助：
 
-      
+<a href="http://jakearchibald.com/2013/animated-line-drawing-svg/" target="_blank">animated-line-drawing-svg</a>
+
+<a href="https://css-tricks.com/svg-line-animation-works/" target="_blank">svg-line-animation-works</a>
    
 
 
