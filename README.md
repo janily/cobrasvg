@@ -7,7 +7,7 @@ The JavaScript SVG path animation library for the modern web.
 cobrasvg主要是用来制作SVG路径动画的即path animation。路径动画主要包括以下三个方面：
 
 * 利用stroke的dashoffset和dasharray两个属性，来制作路径动画；
-* 配合透明度来制作渐隐渐现动画
+* 配合透明度来制作填充动画
 
 ### Version
 
