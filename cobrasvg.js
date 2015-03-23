@@ -72,9 +72,9 @@
 	}
 
 	/**
-	 *
+	 * 配置选项
 	 * 指定要产生动画效果SVG元素的ID，默认为svg
-	 *
+	 * 是否开启填充动画效果
 	 */
 
 	cobrasvg.prototype.options = {
@@ -151,17 +151,6 @@
 			path.style.fillOpacity = 1;
 			path.style.strokeOpacity = 0;
 		});
-	}
-
-	/**
-	 * cobrasvg重绘动画效果
-	 *
-	 * replay方法是用来控制动画运行的，可以重新绘制动画。比如点击按钮重新运行动画效果
-	 *
-	 */
-
-	cobrasvg.prototype.replay = function() {
-		this._initAnimation();
 	}
 
 	/**
