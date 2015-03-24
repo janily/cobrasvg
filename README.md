@@ -76,7 +76,7 @@ cobrasvg主要是用来制作SVG路径动画的即path animation。路径动画�
 	<script src="path/to/cobrasvg.js"></script>
     <script>
      (function() {
-	    var myAnimation = new cobrasvg({
+	    var svgAnimation = new cobrasvg({
 	      elementId: "svg"
 	    });
 	  })();
@@ -87,7 +87,7 @@ cobrasvg主要是用来制作SVG路径动画的即path animation。路径动画�
 	<script src="path/to/cobrasvg.js"></script>
     <script>
      (function() {
-	    var myAnimation = new cobrasvg({
+	    var svgAnimation = new cobrasvg({
 	      elementId: "svg",
 	      fillPath:false
 	    });
