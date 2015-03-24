@@ -78,8 +78,8 @@
 	 */
 
 	cobrasvg.prototype.options = {
-		elementId: "svg",    //指定要产生path动画效果的SVG元素的ID
-		fillPath: true       //是否开启填充的动画效果
+		elementId: "svg",    //指定要产生path动画效果的SVG元素的ID，默认id为SVG
+		fillPath: true       //是否开启填充的动画效果，默认开启填充效果
 	}
 
 	/**
@@ -88,6 +88,7 @@
 	 */
 
 	cobrasvg.prototype._init = function() {
+		// 检测浏览器是否支持SVG，并添加特定的类来标识
 		if (!this._supportSvg()) {
 			document.documentElement.className = "noSvg";
 		} else {
@@ -96,15 +97,15 @@
 		this.svg = document.getElementById(this.options.elementId);
 		this.fillDraw = this.options.fillPath;
 		this.paths = this.svg.querySelectorAll("path");
-		this._initAnimation();
+		this._pathAnimation();
 	}
 
 	/**
-	 * cobrasvg _initAnimation()
+	 * cobrasvg _pathAnimation()
 	 * 动画方法，主要是初始化一些属性的值，首先是获取path元素的长度；
 	 * 然后设置path的透明度。
 	 */
-	cobrasvg.prototype._initAnimation = function() {
+	cobrasvg.prototype._pathAnimation = function() {
 		for (var i = 0; i < this.paths.length; i++) {
 			var path = this.paths[i];
 			var length = path.getTotalLength();
